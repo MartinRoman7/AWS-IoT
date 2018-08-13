@@ -1,5 +1,5 @@
 # AWS-IoT (Python)
-Repositorio con scripts necesarios para la implementación de AWS IoT en Python. 
+Repositorio con scripts necesarios para la implementación de AWS IoT en Python.
 
 ## Prueba de lectura de puertos GPIO
 
@@ -41,8 +41,43 @@ python basicPubSub.py \
 curl https://www.symantec.com/content/en/us/enterprise/verisign/roots/VeriSign-Class%203-Public-Primary-Certification-Authority-G5.pem > root-CA.pem
 ```
 
-## Actualizar Node-Red
+## Node-Red
+
+### Actualizar
 
 ```bash
 bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
+```
+
+### Iniciar el servicio
+
+```bash
+node-red-start
+```
+
+### Autoinicio del servicio
+
+```bash
+sudo systemctl enable nodered.service
+```
+
+### Bloques de configuración
+
+* rpi gpio: Lectura de pines.
+* switch: asignar un valor estático.
+* change: definir un tipo de salida.
+* debug: obtener salida en consola.
+* mqtt: configurar conexión con AWS.
+    * Punto de enlace.
+    * Puerto.
+    * Ceritificados.
+    * Llaves.
+
+### Node-red-dashboard
+
+* Mostrado de texto.
+* Mostrado de gráficas.
+
+```
+localhost:1880/ui
 ```
