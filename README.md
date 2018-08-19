@@ -23,6 +23,8 @@ python paho-mqtt.py
 Para enviar datos a AWS se utiliza un script de prueba basado en Python.
 
 ```bash
+pip install AWSIoTPythonSDK
+
 python basicPubSub.py \
 -e <endpoint> \ # <your-endpoint-id>.iot.ap-southeast-2.amazonaws.com
 -r <rootCAFilePath> \ # root-CA.pem
